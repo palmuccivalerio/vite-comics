@@ -55,13 +55,15 @@ export default {
       <img
         src="../assets/img/dc-logo.png"
         alt="Logo  della DC"
-      />
-    </div>
-    <ul class="navigation">
-      <li v-for="item in menu">
+       /> 
+      
+       <ul class="navigation">
+       <li v-for="item in menu">
         <a href="" :class="{ active: item.isActive }">{{ item.title }}</a>
       </li>
     </ul>
+    </div>
+   
   </header>
 </template>
 
@@ -70,6 +72,12 @@ export default {
 @use "../style/partials/variables" as *;
 
 header {
+img{
+  width:50px;
+  margin-left:100px;
+  margin-bottom:7px;
+
+}
 
   .header-logo {
     text-align: center;
@@ -80,8 +88,10 @@ header {
   ul {
     @include flex(row, center, center);
     list-style-type: none;
-    gap: 1rem;
-    margin-top: 26px;
+    gap: -2rem;
+    margin-top: 10px;
+    font-size:9px;
+    margin-left:190px;
 
     a {
       padding: 8px 10px;

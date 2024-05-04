@@ -51,7 +51,7 @@ export default {
 </div>
   </section>
 
- <section>
+ <section class="bg-color">
   <ul class="digi-navigation">
       <li v-for="item in menu">
         <a href="" :class="{ active: item.isActive }">{{ item.title }}</a>
@@ -98,6 +98,13 @@ section {
   }
 
 
+
+
+  .bg-color{
+    background-color:blue;
+    border:4px solid blue;
+    height:100px
+  }
 
 
 
