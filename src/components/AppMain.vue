@@ -1,7 +1,15 @@
 <script>
-export default {  
+
+import { productsArray } from "../assets/data/dc-comics.js";
+import ProductCard from "./ProductCard.vue";
+
+export default { 
+  components: {
+    ProductCard
+  },
   data() {
     return {
+      products: productsArray,
       menu: [
         {
           title: "DIGITAL COMICS",
@@ -31,7 +39,16 @@ export default {
 
 <template>
   <section class="products">
-    <h2> -> Content goes here <-- </h2>
+
+<div class="row">
+  <div class="col" v-for="prod in products">
+    <ProductCard
+      :cardImage="prod.thumb"
+      :cardTitle="prod.series"
+      :cardType="prod.type"
+    />
+  </div>
+</div>
   </section>
 
  <section>
@@ -62,8 +79,26 @@ section {
   color:white;
  
 
+ 
+
   @include flex(row, center, center);
 }
+
+
+
+.row {
+    @include flex(row, space-between, wrap);
+
+
+    .col {
+      width: 50%;
+      margin-top:10rem;
+      margin-bottom: 10rem;
+    }
+  }
+
+
+
 
 
 ul {
